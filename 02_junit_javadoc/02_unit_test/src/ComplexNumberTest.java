@@ -69,7 +69,15 @@ public class ComplexNumberTest {
         // (1 +  0i) : (0 + 1i) = (   0 +   -1i)
         // (8 + 16i) : 4        = (   2 +    4i)
 
-        // TODO: Test schreiben
+        ComplexNumber a = new ComplexNumber(4, -8);
+        ComplexNumber b = new ComplexNumber(3, 4);
+        ComplexNumber c = new ComplexNumber(1, 0);
+        ComplexNumber d = new ComplexNumber(0, 1);
+        ComplexNumber e = new ComplexNumber(8, 16);
+
+        assertEquals(new ComplexNumber(-0.8, -1.6), a.divide(b));
+        assertEquals(new ComplexNumber(0, -1), c.divide(d));
+        assertEquals(new ComplexNumber(2, 4), e.divide(4));
     }
 
     /**
@@ -81,7 +89,11 @@ public class ComplexNumberTest {
         // (3   +  5i) --conj--> (3   + -5i)
         // (-2  + -4i) --conj--> (-2  + 4i)
 
-        // TODO: Test schreiben
+        ComplexNumber a = new ComplexNumber(3, 5);
+        ComplexNumber b = new ComplexNumber(-2, -4);
+        
+        assertEquals(new ComplexNumber(3, -5), a.conjugate());
+        assertEquals(new ComplexNumber(-2, 4), b.conjugate());
     }
 
     /**
@@ -93,7 +105,11 @@ public class ComplexNumberTest {
         // |(3 + -4i)| = 5
         // |(0 +  3i)| = 3
 
-        // TODO: Test schreiben
+        ComplexNumber a = new ComplexNumber(3, -4);
+        ComplexNumber b = new ComplexNumber(0, 3);
+        
+        assertEquals(new ComplexNumber(5), new ComplexNumber(a.abs()));
+        assertEquals(new ComplexNumber(3), new ComplexNumber(b.abs()));
     }
 
     /**
@@ -107,7 +123,12 @@ public class ComplexNumberTest {
         // (2 + -4i)^3 = (2 + -4i)*(2 + -4i)*(2 + -4i)
         // (2 + -4i)^6 = (7488 + -2816i)
 
-        // TODO: Test schreiben
+        ComplexNumber a = new ComplexNumber(2, -4);
+
+        assertEquals(new ComplexNumber(2, -4), a.power(1));
+        assertEquals(new ComplexNumber(2, -4).multiply(a), a.power(2));
+        assertEquals(new ComplexNumber(2, -4).multiply(a).multiply(a), a.power(3));
+        assertEquals(new ComplexNumber(7488, -2816), a.power(6));
     }
 }
 
