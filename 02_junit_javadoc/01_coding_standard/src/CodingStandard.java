@@ -15,7 +15,8 @@ public class CodingStandard {
     /*
      * Legt eine neue Instanz an.
      *
-     * Erstes_Feld: das erste Feld. ZweitesFeld: das zweite Feld.
+     * Erstes_Feld: das erste Feld.
+     * ZweitesFeld: das zweite Feld.
      */
     public void codingStandard(int erstesFeld, double zweitesFeld) {
         this.erstesFeld = erstesFeld;
