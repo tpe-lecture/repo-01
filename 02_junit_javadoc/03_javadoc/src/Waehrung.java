@@ -1,16 +1,33 @@
-// TODO: JavaDoc
+/**
+ * Diese Klasse verwaltet Währungen. Man kann Währungen anlegen
+ * und den Kurs mit anderen angelegten Währungen vergleichen.
+ * @author Christian Coenen
+ *
+ */
 public class Waehrung {
 
-    // TODO: JavaDoc
+    /**
+     * Instanzvariable, welche den Kurs speichert.
+     * Kann nach der Objekterzeugung nichtmehr verändert werden
+     */
     private final int kurs;
 
-    // TODO: JavaDoc
+   /**
+    * Instanzvariable, welche den Namen der Währung speichert.
+    * Kann nach der Objekterzeugung nichtmehr verändert werden
+    */
     private final String name;
 
-    // TODO: JavaDoc
+    /**
+     * Instanzvariable, welche das Kürzel der Währung speichert.
+     * Kann nach der Objekterzeugung nichtmehr verändert werden
+     */
     private final String kuerzel;
 
-    // TODO: JavaDoc
+    /**
+     * Klassenvariable, mit der gerechnet werden kann.
+     * Ist mit dem festen Wert 10000 Initialisiert.
+     */
     private static final long TEILER = 10000;
 
     /**
@@ -26,22 +43,36 @@ public class Waehrung {
         this.kuerzel = kuerzel;
     }
 
-    // TODO: JavaDoc
+    /**
+     * Rechnet einen angegebenen Betrag einer Währung in eine andere Währung um.
+     * @param betrag - Menge an Geld, die gewechselt werden soll
+     * @param toWaehrung - Währung, in die gewechselt wird
+     * @return betrag in der neuen Währung
+     */
     public long umrechnen(long betrag, Waehrung toWaehrung) {
         return betrag * kurs / toWaehrung.kurs;
     }
 
-    // TODO: JavaDoc
+    /**
+     * Liefert den Wert des Kurses
+     * @return s.o
+     */
     public int getKurs() {
         return kurs;
     }
     
-    // TODO: JavaDoc
+    /**
+     * Liefert den Namen der Währung.
+     * @return s.o
+     */
     public String getName() {
         return name;
     }
 
-    // TODO: JavaDoc
+    /**
+     * Liefert das Kürzel der Währung.
+     * @return s.o
+     */
     public String getKuerzel() {
         return kuerzel;
     }
