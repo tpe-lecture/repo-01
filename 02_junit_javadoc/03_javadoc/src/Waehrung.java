@@ -54,13 +54,13 @@ public class Waehrung {
     }
 
     /**
-     * Liefert den Wert des Kurses
+     * Liefert den Wert des Kurses.
      * @return s.o
      */
     public int getKurs() {
         return kurs;
     }
-    
+
     /**
      * Liefert den Namen der Währung.
      * @return s.o

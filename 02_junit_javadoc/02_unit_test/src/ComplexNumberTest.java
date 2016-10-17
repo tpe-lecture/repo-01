@@ -91,7 +91,7 @@ public class ComplexNumberTest {
 
         ComplexNumber a = new ComplexNumber(3, 5);
         ComplexNumber b = new ComplexNumber(-2, -4);
-        
+
         assertEquals(new ComplexNumber(3, -5), a.conjugate());
         assertEquals(new ComplexNumber(-2, 4), b.conjugate());
     }
@@ -107,7 +107,7 @@ public class ComplexNumberTest {
 
         ComplexNumber a = new ComplexNumber(3, -4);
         ComplexNumber b = new ComplexNumber(0, 3);
-        
+
         assertEquals(new ComplexNumber(5), new ComplexNumber(a.abs()));
         assertEquals(new ComplexNumber(3), new ComplexNumber(b.abs()));
     }
@@ -127,7 +127,8 @@ public class ComplexNumberTest {
 
         assertEquals(new ComplexNumber(2, -4), a.power(1));
         assertEquals(new ComplexNumber(2, -4).multiply(a), a.power(2));
-        assertEquals(new ComplexNumber(2, -4).multiply(a).multiply(a), a.power(3));
+        assertEquals(new ComplexNumber(2, -4).multiply(a).multiply(a),
+                a.power(3));
         assertEquals(new ComplexNumber(7488, -2816), a.power(6));
     }
 }
