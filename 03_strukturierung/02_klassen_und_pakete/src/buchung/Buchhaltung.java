@@ -1,5 +1,4 @@
-
-
+package buchung;
 /**
  * Sammlung von Konten und Methoden, um Buchungen durchzuführen.
  */
