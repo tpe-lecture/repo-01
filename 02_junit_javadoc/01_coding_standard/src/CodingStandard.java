@@ -4,30 +4,31 @@
  */
 public class CodingStandard {
 
-    /*
+    /**
      * Konstante, die dem Rest der Welt etwas mitteilen soll.
      */
-    public final static int KONSTANTE_MIT_TOLLEM_WERT = 3;
+    public static final int KONSTANTE_MIT_TOLLEM_WERT = 3;
 
     private int erstesFeld;
     private double zweitesFeld;
 
-    /*
+    /**
      * Legt eine neue Instanz an.
      *
-     * Erstes_Feld: das erste Feld.
-     * ZweitesFeld: das zweite Feld.
+     * @param erstesFeld das erste Feld.
+     * @param zweitesFeld das zweite Feld.
      */
     public void codingStandard(int erstesFeld, double zweitesFeld) {
         this.erstesFeld = erstesFeld;
         this.zweitesFeld = zweitesFeld;
     }
 
-    /*
+    /**
      * Methode, die etwas tut.
      *
-     * parameter: Eingabewert für die Methode. gibt einen Wert abhängig von
-     * {@code parameter} zurück.
+     * @param parameter Eingabewert für die Methode. gibt einen Wert abhängig
+     *                  von {@code parameter} zurück.
+     * @return int value
      */
     public int methodeDieWasTut(int parameter) {
         int result;
