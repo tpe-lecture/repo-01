@@ -48,8 +48,13 @@ public class Personengesellschaft extends Unternehmen implements Einkommensteuer
      */
     public int einkommensteuer() {
         int gewinn = this.getGewinn();
+        int value = 0;
         int steuern = 0;
-        switch(gewinn % 20000) {
+        if(gewinn / 20000 >= 3)
+            value = 3;
+        else
+            value = gewinn / 20000;
+        switch(value) {
             case 3:
                 steuern += (gewinn - 60000) * 0.4;
                 gewinn = 60000;

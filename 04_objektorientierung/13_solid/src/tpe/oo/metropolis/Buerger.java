@@ -23,8 +23,13 @@ public class Buerger extends Mensch implements Einkommensteuerpflichtig{
      */
     public int einkommensteuer() {
         int einkommen = this.getEinkommen();
+        int value = 0;
         int steuern = 0;
-        switch(einkommen % 20000) {
+        if(einkommen / 20000 >= 3)
+            value = 3;
+        else
+            value = einkommen / 20000;
+        switch(value) {
             case 3:
                 steuern += (einkommen - 60000) * 0.4;
                 einkommen = 60000;
