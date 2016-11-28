@@ -20,13 +20,21 @@ public class Main {
 
         NumberSelector s = new NumberSelector();
 
-        // TODO: Gerade Zaheln filtern
-        int[] gerade = null;
+        int[] gerade = s.filter(new Predicate<Integer>() {
+            @Override
+            public boolean accept(Integer object) {
+                return object % 2 == 0 ? true : false;
+            }
+        },ZAHLEN);
 
         System.out.println(Arrays.toString(gerade));
 
-        // TODO: Ungerade Zaheln filtern
-        int[] ungerade = null;
+        int[] ungerade = s.filter(new Predicate<Integer>() {
+            @Override
+            public boolean accept(Integer object) {
+                return object % 2 == 0 ? false : true;
+            }
+        }, ZAHLEN);
 
         System.out.println(Arrays.toString(ungerade));
 
