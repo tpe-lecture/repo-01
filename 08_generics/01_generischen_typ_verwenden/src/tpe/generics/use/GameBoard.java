@@ -117,7 +117,6 @@ public class GameBoard extends Board {
             return;
         }
 
-        // TODO: Oberstes Sprite vom Stapel ansehen und s zuweisen
         Sprite s = coins.peek();
 
         if (s.intersects(new Point(e.getX(), e.getY()))) {
