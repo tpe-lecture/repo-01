@@ -1,5 +1,4 @@
-package bestellung;
-import kunde.Adresse;
+
 
 /**
  * Lieferant.

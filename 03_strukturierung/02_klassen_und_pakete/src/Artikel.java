@@ -1,4 +1,4 @@
-package bestellung;
+
 
 /**
  * Ein Artikel aus dem Angebot der Firma.
