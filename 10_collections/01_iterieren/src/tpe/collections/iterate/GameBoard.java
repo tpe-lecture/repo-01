@@ -3,6 +3,7 @@ package tpe.collections.iterate;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import de.smits_net.games.framework.board.Board;
@@ -11,6 +12,7 @@ import de.smits_net.games.framework.sprite.Sprite;
 /**
  * Spielfeld.
  */
+@SuppressWarnings("serial")
 public class GameBoard extends Board {
 
     /** Anzahl der Münzen. */
@@ -18,6 +20,8 @@ public class GameBoard extends Board {
 
     /** Münzgenerator. */
     private CoinGenerator generator;
+
+    private ArrayList<Sprite> list = new ArrayList<Sprite>();
 
     /**
      * Erzeugt ein neues Board.
@@ -28,7 +32,9 @@ public class GameBoard extends Board {
 
         generator = new CoinGenerator(this, NUM_COINS);
 
-        // TODO: Münzen generieren
+       for(Sprite c : generator) {
+           list.add(c);
+       }
     }
 
 
@@ -37,7 +43,9 @@ public class GameBoard extends Board {
      */
     @Override
     public synchronized void drawGame(Graphics g) {
-        // TODO: Münzen zeichnen
+        for(Sprite c : list) {
+            c.draw(g);
+        }
     }
 
     /**
