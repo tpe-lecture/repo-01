@@ -9,8 +9,7 @@ import de.smits_net.games.framework.image.SimpleImage;
 /**
  * Ein Ufo.
  */
-public class Ufo extends SimpleImage {
-// TODO: Runnable implementieren
+public class Ufo extends SimpleImage implements Runnable{
 
     /** X-Position des Ufos. */
     private int x;
@@ -50,9 +49,15 @@ public class Ufo extends SimpleImage {
         super.draw(g, new Point(x, y), null);
     }
 
-    // TODO: run-Methode schreiben in der Methode:
-    //       1. Ufo um eins in x-Richtung bewegen
-    //       2. für sleepTime Millisekunden schlafen
-    //       3. Schritt 1-2 wiederholen, solange Ufo noch auf
-    //          Spielfeld sichtbar ist
+    @Override
+    public void run() {
+        while(this.x <= board.getWidth() && this.y <= board.getHeight()) {
+            x++;
+            try {
+                Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
