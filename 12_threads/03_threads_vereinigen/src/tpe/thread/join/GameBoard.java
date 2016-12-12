@@ -22,10 +22,20 @@ public class GameBoard extends Board {
          * @see java.lang.Runnable#run()
          */
         public void run() {
-
-            // TODO: Threads vereinigen
-
-            // TODO: Ufos sprengen, wenn alle Threads zu Ende gekommen sind
+            int counter = 0;
+            while(counter < 4) {
+                for(Thread t : threads) {
+                    try {
+                        t.join();
+                        counter++;
+                    } catch (InterruptedException e) {
+                        return;
+                    }
+                }
+            }
+            for(Ufo u : ufos) {
+                u.explode();
+            }
         }
     }
 
