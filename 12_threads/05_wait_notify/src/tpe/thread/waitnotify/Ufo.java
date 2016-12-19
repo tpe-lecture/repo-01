@@ -59,7 +59,16 @@ public class Ufo extends AnimatedImage implements Runnable {
      */
     public void run() {
         while (x < board.getWidth()) {
-
+            if(x == stopPosition) {
+                synchronized(board) {
+                    board.notifyAll();
+                    try {
+                        board.wait();
+                    } catch (InterruptedException e) {
+                        break;
+                    }
+                }
+            }
             // Ufo weiter bewegen
             x++;
 
